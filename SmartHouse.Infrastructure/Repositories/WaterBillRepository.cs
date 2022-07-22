@@ -33,7 +33,7 @@ namespace SmartHouse.Infrastructure.Repositories
 
         public async Task<IEnumerable<WaterBill>> GetAllAsync()
         {
-            return await context.WaterBills.AsNoTracking().AsQueryable().OrderByDescending(c => c.BillDate).ToListAsync();
+            return await context.WaterBills.Include(x => x.User).AsNoTracking().AsQueryable().OrderByDescending(c => c.BillDate).ToListAsync();
         }
 
         public async Task<WaterBill> GetByIdAsync(string id)
@@ -46,9 +46,9 @@ namespace SmartHouse.Infrastructure.Repositories
             context.WaterBills.Update(entity);
         }
 
-        public Task<WaterBill> SingleOrDefaultAsync(Expression<Func<WaterBill, bool>> predicate)
+        public async Task<WaterBill> SingleOrDefaultAsync(Expression<Func<WaterBill, bool>> predicate)
         {
-            throw new NotImplementedException();
+            return await context.WaterBills.AsNoTracking().AsQueryable().SingleOrDefaultAsync(predicate);
         }
 
         public void Update(WaterBill entity)

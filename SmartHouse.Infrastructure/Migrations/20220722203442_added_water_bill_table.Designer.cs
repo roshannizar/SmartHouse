@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SmartHouse.Infrastructure.DbContexts;
 
 namespace SmartHouse.Infrastructure.Migrations
 {
     [DbContext(typeof(SmartHouseDbContext))]
-    partial class SmartHouseDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220722203442_added_water_bill_table")]
+    partial class added_water_bill_table
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

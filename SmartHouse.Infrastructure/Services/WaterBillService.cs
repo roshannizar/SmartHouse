@@ -21,7 +21,7 @@ namespace SmartHouse.Infrastructure.Services
 
         public async Task CreateAsync(WaterBill model)
         {
-            await unitOfWork.WaterBillRepository.AddAsync(model.Create(model));
+            await unitOfWork.WaterBillRepository.AddAsync(model.Create(model, Email));
             await unitOfWork.CommitAsync();
         }
 
@@ -30,7 +30,7 @@ namespace SmartHouse.Infrastructure.Services
             var bill = await unitOfWork.WaterBillRepository.GetByIdAsync(Id);
             if (bill == null)
                 throw new NotFoundException("Water bill not found or already removed");
-            unitOfWork.WaterBillRepository.Remove(WaterBill.Delete(email));
+            unitOfWork.WaterBillRepository.Remove(bill.Delete(Email));
             await unitOfWork.CommitAsync();
         }
 
@@ -52,7 +52,7 @@ namespace SmartHouse.Infrastructure.Services
                 throw new NotFoundException("Water bill not found or already removed");
             }
 
-            unitOfWork.WaterBillRepository.Update(model.Update(model));
+            unitOfWork.WaterBillRepository.Update(bill.Update(model, Email));
             await unitOfWork.CommitAsync();
         }
     }

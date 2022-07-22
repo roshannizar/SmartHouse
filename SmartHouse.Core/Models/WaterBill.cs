@@ -18,32 +18,36 @@ namespace SmartHouse.Core.Models
 
         
 
-        public WaterBill Create(WaterBill waterBill) {
+        public WaterBill Create(WaterBill waterBill, string user) {
+            Id = Guid.NewGuid().ToString();
             AccountNumber = waterBill.AccountNumber;
             Amount = waterBill.Amount;
             Arrears = waterBill.Arrears;
             BillDate = waterBill.BillDate; 
-            UserId = waterBill.UserId;
+            UserId = user;
             RecordState = RecordState.Active;
+
+            CreateAuditable(user);
+            ModifiedAuditable(user);
 
             return this;
         }
-        public WaterBill Update(WaterBill waterBill) {
+        public WaterBill Update(WaterBill waterBill, string user) {
+            Id = waterBill.Id;
             AccountNumber = waterBill.AccountNumber;
             Amount = waterBill.Amount;
             Arrears = waterBill.Arrears;
             BillDate = waterBill.BillDate;
             UserId = waterBill.UserId;
-            RecordState = RecordState.Active;
 
+            ModifiedAuditable(user);
             return this;
         }
 
-        public WaterBill Delete(string bill)
+        public WaterBill Delete(string user)
         {
             RecordState = RecordState.Removed;
-
-            ModifiedAuditable(bill);
+            ModifiedAuditable(user);
 
             return this;
         }
