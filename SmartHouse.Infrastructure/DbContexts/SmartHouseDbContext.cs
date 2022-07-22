@@ -9,6 +9,7 @@ namespace SmartHouse.Infrastructure.DbContexts
         public SmartHouseDbContext(DbContextOptions<SmartHouseDbContext> options) : base(options) { }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<WaterBill> WaterBills { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
