@@ -8,6 +8,8 @@ namespace SmartHouse.Core.Repository
     public interface IUnitOfWork
     {
         IUserRepository UserRepository { get; }
+        IWaterBillRepository WaterBillRepository { get; }
+        IRentRepository RentRepository { get; }
 
         Task<int> CommitAsync();
     }
