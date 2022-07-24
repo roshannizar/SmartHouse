@@ -26,6 +26,7 @@ namespace SmartHouse.Api.Extensions
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IUtilityService, UtilityService>();
             services.AddTransient<IWaterBillService, WaterBillService>();
+            services.AddTransient<IRentService, RentService>();
 
             services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
 

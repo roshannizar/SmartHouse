@@ -9,6 +9,7 @@ namespace SmartHouse.Core.Repository
     {
         IUserRepository UserRepository { get; }
         IWaterBillRepository WaterBillRepository { get; }
+        IRentRepository RentRepository { get; }
 
         Task<int> CommitAsync();
     }
