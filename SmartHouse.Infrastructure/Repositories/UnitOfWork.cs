@@ -10,6 +10,7 @@ namespace SmartHouse.Infrastructure.Repositories
         private IUserRepository _userRepository;
         private IWaterBillRepository _waterBillRepository;
         private IRentRepository _rentRepository;
+        private IGarbageRepository _garbageRepository;
 
         public UnitOfWork(SmartHouseDbContext context)
         {
@@ -19,6 +20,7 @@ namespace SmartHouse.Infrastructure.Repositories
         public IUserRepository UserRepository => _userRepository ??= new UserRepository(context);
         public IWaterBillRepository WaterBillRepository => _waterBillRepository ??= new WaterBillRepository(context);
         public IRentRepository RentRepository => _rentRepository ??= new RentRepository(context);
+        public IGarbageRepository GarbageRepository => _garbageRepository ??= new GarbageRepository(context);
 
         public async Task<int> CommitAsync()
         {

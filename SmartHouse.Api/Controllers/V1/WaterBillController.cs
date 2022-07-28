@@ -61,6 +61,5 @@ namespace SmartHouse.Api.Controllers.V1
             await waterBillService.DeleteAsync(id);
             return new JsonResult(new { message = "Water bill deleted successfully" }) { StatusCode = StatusCodes.Status200OK };
         }
-
     }
 }

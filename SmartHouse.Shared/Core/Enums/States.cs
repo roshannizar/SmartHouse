@@ -17,4 +17,12 @@
         Cash,
         Card
     }
+
+    public enum GarbageTypes
+    {
+        plastic,
+        organic,
+        glass,
+        others
+    }
 }
