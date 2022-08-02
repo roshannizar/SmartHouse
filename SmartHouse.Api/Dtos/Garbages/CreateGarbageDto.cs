@@ -7,5 +7,6 @@ namespace SmartHouse.Api.Dtos.Garbages
     {
         public DateTime CollectingDate { get; set; }
         public GarbageTypes GarbageType { get; set; }
+        public string Weight { get; set; }
     }
 }

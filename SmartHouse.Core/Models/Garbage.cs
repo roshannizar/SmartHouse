@@ -11,7 +11,8 @@ namespace SmartHouse.Core.Models
     {
         public DateTime CollectingDate { get; set; }
         public GarbageTypes GarbageType { get; set; }
-        public String UserId { get; set; }
+        public string Weight { get; set; }
+        public string UserId { get; set; }
        
         [ForeignKey("UserId")]
         public User User { get; set; }
@@ -20,7 +21,8 @@ namespace SmartHouse.Core.Models
             Id = Guid.NewGuid().ToString();
             CollectingDate = garbage.CollectingDate;
             GarbageType = garbage.GarbageType;
-
+            Weight = garbage.Weight;
+            UserId = user;
             RecordState = RecordState.Active;
 
             CreateAuditable(user);
@@ -30,9 +32,11 @@ namespace SmartHouse.Core.Models
 
         public Garbage Update(Garbage garbage, string user)
         {
-            Id = Guid.NewGuid().ToString();
+            Id = garbage.Id;
             CollectingDate = garbage.CollectingDate;
             GarbageType = garbage.GarbageType;
+            Weight = garbage.Weight;
+            UserId = user;
 
             ModifiedAuditable(user);
             return this;

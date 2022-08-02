@@ -11,9 +11,8 @@ namespace SmartHouse.Infrastructure.Services
 {
     public class GarbageService : BaseService, IGarbageService
     {
-        public GarbageService(IUnitOfWork unitOfWork, IHttpContextAccessor httpContext) : base(unitOfWork, httpContext)
-        {
-        }
+        public GarbageService(IUnitOfWork unitOfWork, IHttpContextAccessor httpContext) : 
+            base(unitOfWork, httpContext) { }
 
         public async Task CreateAsync(Garbage model)
         {
@@ -45,7 +44,7 @@ namespace SmartHouse.Infrastructure.Services
             if (garbage == null) {
                 throw new NotFoundException("Garbage not found or already removed");
             }
-            unitOfWork.GarbageRepository.Update(garbage);
+            unitOfWork.GarbageRepository.Update(garbage.Update(model, Email));
             await unitOfWork.CommitAsync();
         }
     }

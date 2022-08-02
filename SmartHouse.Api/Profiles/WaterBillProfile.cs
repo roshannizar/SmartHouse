@@ -15,7 +15,6 @@ namespace SmartHouse.Api.Profiles
             CreateMap<WaterBill, WaterBillDto>().ReverseMap();
             CreateMap<WaterBill, CreateWaterBillDto>().ReverseMap();
             CreateMap<WaterBill, UpdateWaterBillDto>().ReverseMap();
-            CreateMap<User, UserWaterBillDto>().ReverseMap();
         }
     }
 }

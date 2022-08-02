@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace SmartHouse.Api.Controllers.V1
 {
-    [Route("api/garbages")]
+    [Route("api/v1/garbages")]
     [ApiController]
     public class GarbageController : BaseApiController
     {

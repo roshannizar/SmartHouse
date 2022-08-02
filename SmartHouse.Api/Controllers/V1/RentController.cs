@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace SmartHouse.Api.Controllers.V1
 {
-    [Route("api/rents")]
+    [Route("api/v1/rents")]
     [ApiController]
     public class RentController : BaseApiController
     {
