@@ -11,7 +11,6 @@ namespace SmartHouse.Api.Profiles
             CreateMap<Rent, RentDto>().ReverseMap();
             CreateMap<Rent, CreateRentDto>().ReverseMap();
             CreateMap<Rent, UpdateRentDto>().ReverseMap();
-            CreateMap<User, UserRentDto>().ReverseMap();
         }
     }
 }

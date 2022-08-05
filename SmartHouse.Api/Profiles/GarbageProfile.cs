@@ -11,7 +11,6 @@ namespace SmartHouse.Api.Profiles
             CreateMap<CreateGarbageDto, Garbage>().ReverseMap();
             CreateMap<GarbageDto, Garbage>().ReverseMap();
             CreateMap<UpdateGarbageDto, Garbage>().ReverseMap();
-            CreateMap<User, UserGarbageDto>().ReverseMap();
         }
     }
 }

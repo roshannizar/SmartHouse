@@ -9,7 +9,8 @@ namespace SmartHouse.Core.Models
 {
     public class Rent : AuditableEntity
     {
-        public Decimal Amount { get; set; }
+        public string Name { get; set; }
+        public decimal Amount { get; set; }
         public DateTime PaidDate { get; set; }
         public string UserId { get; set; }
         [ForeignKey("UserId")]
@@ -19,6 +20,7 @@ namespace SmartHouse.Core.Models
         public Rent Create(Rent rent, string user)
         {
             Id = Guid.NewGuid().ToString();
+            Name = rent.Name;
             Amount = rent.Amount;
             PaidDate = rent.PaidDate;
             UserId = user;
@@ -32,6 +34,7 @@ namespace SmartHouse.Core.Models
         public Rent Update(Rent rent, string user)
         {
             Id = Guid.NewGuid().ToString();
+            Name = rent.Name;
             Amount = rent.Amount;
             PaidDate = rent.PaidDate;
             UserId = user;

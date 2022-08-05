@@ -5,7 +5,8 @@ namespace SmartHouse.Api.Dtos.Rents
     public class UpdateRentDto
     {
         public string Id { get; set; }
-        public Decimal Amount { get; set; }
+        public string Name { get; set; }
+        public decimal Amount { get; set; }
         public DateTime PaidDate { get; set; }
     }
 }
