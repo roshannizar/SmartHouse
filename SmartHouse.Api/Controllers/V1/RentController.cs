@@ -23,7 +23,7 @@ namespace SmartHouse.Api.Controllers.V1
 
         [Authorize]
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<RentDto>>> GetWaterBills()
+        public async Task<ActionResult<IEnumerable<RentDto>>> GetRents()
         {
             var rents = await rentService.GetAllAsync();
             return Ok(mapper.Map<IEnumerable<RentDto>>(rents));
@@ -48,7 +48,7 @@ namespace SmartHouse.Api.Controllers.V1
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<RentDto>> GetWaterBill(string id)
+        public async Task<ActionResult<RentDto>> GetRent(string id)
         {
             var rent = await rentService.GetAsync(id);
             return Ok(mapper.Map<RentDto>(rent));

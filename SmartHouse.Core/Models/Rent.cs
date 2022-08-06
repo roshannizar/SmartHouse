@@ -33,7 +33,7 @@ namespace SmartHouse.Core.Models
         }
         public Rent Update(Rent rent, string user)
         {
-            Id = Guid.NewGuid().ToString();
+            Id = rent.Id;
             Name = rent.Name;
             Amount = rent.Amount;
             PaidDate = rent.PaidDate;
