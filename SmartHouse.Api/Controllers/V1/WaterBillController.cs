@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace SmartHouse.Api.Controllers.V1
 {
-    [Route("api/waterbills")]
+    [Route("api/v1/waterbills")]
     [ApiController]
     public class WaterBillController : BaseApiController
     {
