@@ -12,6 +12,7 @@ namespace SmartHouse.Core.Models
         public string Name { get; set; }
         public decimal Amount { get; set; }
         public DateTime PaidDate { get; set; }
+        public RentTypes RentType { get; set; }
         public string UserId { get; set; }
         [ForeignKey("UserId")]
         public User User { get; set; }
@@ -25,6 +26,7 @@ namespace SmartHouse.Core.Models
             PaidDate = rent.PaidDate;
             UserId = user;
             RecordState = RecordState.Active;
+            RentType = rent.RentType;
 
             CreateAuditable(user);
             ModifiedAuditable(user);
@@ -39,6 +41,7 @@ namespace SmartHouse.Core.Models
             PaidDate = rent.PaidDate;
             UserId = user;
             RecordState = RecordState.Active;
+            RentType = rent.RentType;
 
             ModifiedAuditable(user);
             return this;
