@@ -25,4 +25,12 @@
         glass,
         others
     }
+
+    public enum RentTypes { 
+        Vehicle,
+        House,
+        Shop,
+        Security,
+        Contract
+    }
 }
