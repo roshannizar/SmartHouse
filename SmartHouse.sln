@@ -3,15 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartHouse.Api", "SmartHouse.Api\SmartHouse.Api.csproj", "{8AE1107D-FD33-4FE0-A608-DB3BE27CC5F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartHouse.Api", "SmartHouse.Api\SmartHouse.Api.csproj", "{8AE1107D-FD33-4FE0-A608-DB3BE27CC5F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartHouse.Shared", "SmartHouse.Shared\SmartHouse.Shared.csproj", "{6592542D-87D6-4468-88FD-B00CD5DCA384}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartHouse.Shared", "SmartHouse.Shared\SmartHouse.Shared.csproj", "{6592542D-87D6-4468-88FD-B00CD5DCA384}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartHouse.Core", "SmartHouse.Core\SmartHouse.Core.csproj", "{E29B5FD6-C074-47C3-A901-F706FFAF27DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartHouse.Core", "SmartHouse.Core\SmartHouse.Core.csproj", "{E29B5FD6-C074-47C3-A901-F706FFAF27DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartHouse.Infrastructure", "SmartHouse.Infrastructure\SmartHouse.Infrastructure.csproj", "{EBCFC0F0-EB9A-4C38-9159-B6EBF14F7EB6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartHouse.Infrastructure", "SmartHouse.Infrastructure\SmartHouse.Infrastructure.csproj", "{EBCFC0F0-EB9A-4C38-9159-B6EBF14F7EB6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartHouse.Email", "SmartHouse.Email\SmartHouse.Email.csproj", "{850DA265-EB46-4765-AA03-DF1488ABA01B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartHouse.Email", "SmartHouse.Email\SmartHouse.Email.csproj", "{850DA265-EB46-4765-AA03-DF1488ABA01B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartHouse.Queues", "SmartHouse.Queues\SmartHouse.Queues.csproj", "{16C3E928-E9F2-4E69-AF32-5E8AA5EC1CBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartHouse.SignalR", "SmartHouse.SignalR\SmartHouse.SignalR.csproj", "{6B3ECB91-39E8-4E59-9FFF-DA45C80936D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{850DA265-EB46-4765-AA03-DF1488ABA01B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{850DA265-EB46-4765-AA03-DF1488ABA01B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{850DA265-EB46-4765-AA03-DF1488ABA01B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16C3E928-E9F2-4E69-AF32-5E8AA5EC1CBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16C3E928-E9F2-4E69-AF32-5E8AA5EC1CBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16C3E928-E9F2-4E69-AF32-5E8AA5EC1CBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16C3E928-E9F2-4E69-AF32-5E8AA5EC1CBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B3ECB91-39E8-4E59-9FFF-DA45C80936D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B3ECB91-39E8-4E59-9FFF-DA45C80936D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B3ECB91-39E8-4E59-9FFF-DA45C80936D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B3ECB91-39E8-4E59-9FFF-DA45C80936D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

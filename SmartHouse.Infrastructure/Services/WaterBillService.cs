@@ -7,6 +7,7 @@ using SmartHouse.Infrastructure.Common;
 using SmartHouse.Shared.Core.Service;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -36,7 +37,11 @@ namespace SmartHouse.Infrastructure.Services
 
         public async Task<IEnumerable<WaterBill>> GetAllAsync()
         {
-            return await unitOfWork.WaterBillRepository.GetAllAsync();
+            var query = await unitOfWork.WaterBillRepository.GetAllAsync();
+            if (Role == Shared.Core.Enums.Role.Admin)
+                return query;
+            else
+                return query.Where(g => g.UserId == Email).ToList();
         }
 
         public async Task<WaterBill> GetAsync(string Id)

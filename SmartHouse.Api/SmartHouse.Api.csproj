@@ -6,8 +6,10 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="Hangfire" Version="1.7.30" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.27" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.27" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.27">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -19,7 +21,9 @@
     <ProjectReference Include="..\SmartHouse.Core\SmartHouse.Core.csproj" />
     <ProjectReference Include="..\SmartHouse.Email\SmartHouse.Email.csproj" />
     <ProjectReference Include="..\SmartHouse.Infrastructure\SmartHouse.Infrastructure.csproj" />
+    <ProjectReference Include="..\SmartHouse.Queues\SmartHouse.Queues.csproj" />
     <ProjectReference Include="..\SmartHouse.Shared\SmartHouse.Shared.csproj" />
+    <ProjectReference Include="..\SmartHouse.SignalR\SmartHouse.SignalR.csproj" />
   </ItemGroup>
 
 

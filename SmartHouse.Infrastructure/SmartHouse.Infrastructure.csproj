@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -17,6 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\SmartHouse.Core\SmartHouse.Core.csproj" />
     <ProjectReference Include="..\SmartHouse.Email\SmartHouse.Email.csproj" />
+    <ProjectReference Include="..\SmartHouse.Queues\SmartHouse.Queues.csproj" />
     <ProjectReference Include="..\SmartHouse.Shared\SmartHouse.Shared.csproj" />
   </ItemGroup>
 

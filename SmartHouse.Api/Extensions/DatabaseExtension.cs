@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Hangfire;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SmartHouse.Infrastructure.DbContexts;
@@ -13,6 +14,9 @@ namespace SmartHouse.Api.Extensions
             {
                 options.UseSqlServer(Configuration.GetConnectionString("SmartHouseDb"));
             });
+
+            services.AddHangfire(h => h.UseSqlServerStorage(Configuration.GetConnectionString("SmartHouseDb")));
+            services.AddHangfireServer();
         }
     }
 }

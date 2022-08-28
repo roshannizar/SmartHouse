@@ -5,6 +5,7 @@ using SmartHouse.Core.Repository;
 using SmartHouse.Core.Services;
 using SmartHouse.Infrastructure.Common;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace SmartHouse.Infrastructure.Services
@@ -30,7 +31,11 @@ namespace SmartHouse.Infrastructure.Services
 
         public async Task<IEnumerable<Garbage>> GetAllAsync()
         {
-            return await unitOfWork.GarbageRepository.GetAllAsync();
+            var query = await unitOfWork.GarbageRepository.GetAllAsync();
+            if (Role == Shared.Core.Enums.Role.Admin)
+                return query;
+            else
+                return query.Where(g => g.UserId == Email).ToList();
         }
 
         public async Task<Garbage> GetAsync(string Id)

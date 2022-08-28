@@ -9,7 +9,9 @@ using SmartHouse.Email.Services;
 using SmartHouse.Infrastructure.DbContexts;
 using SmartHouse.Infrastructure.Repositories;
 using SmartHouse.Infrastructure.Services;
+using SmartHouse.Queues.Services;
 using SmartHouse.Shared.Core.Helpers;
+using SmartHouse.SignalR.Services;
 using System;
 
 namespace SmartHouse.Api.Extensions
@@ -28,6 +30,8 @@ namespace SmartHouse.Api.Extensions
             services.AddTransient<IWaterBillService, WaterBillService>();
             services.AddTransient<IRentService, RentService>();
             services.AddTransient<IGarbageService, GarbageService>();
+            services.AddTransient<INotificationService, NotificationService>();
+            services.AddTransient<IBackgroundService, BackgroundService>();
 
             services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
 
@@ -45,6 +49,7 @@ namespace SmartHouse.Api.Extensions
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<MessageHub>("/message");
             });
 
             app.UseHealthChecks("/health");

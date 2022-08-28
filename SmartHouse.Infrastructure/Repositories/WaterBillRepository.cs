@@ -14,7 +14,7 @@ namespace SmartHouse.Infrastructure.Repositories
 {
     public class WaterBillRepository : IRepository<WaterBill>, IWaterBillRepository
     {
-        private SmartHouseDbContext context;
+        private readonly SmartHouseDbContext context;
 
         public WaterBillRepository(SmartHouseDbContext context)
         {
