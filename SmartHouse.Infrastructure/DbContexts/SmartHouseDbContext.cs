@@ -13,6 +13,7 @@ namespace SmartHouse.Infrastructure.DbContexts
         public DbSet<WaterBill> WaterBills { get; set; }
         public DbSet<Rent> Rents { get; set; }
         public DbSet<Garbage> Garbages { get; set; }
+        public DbSet<Utility> Utilities { get; set; }
       
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -20,6 +21,7 @@ namespace SmartHouse.Infrastructure.DbContexts
             builder.Entity<WaterBill>().HasQueryFilter(u => u.RecordState == RecordState.Active);
             builder.Entity<Rent>().HasQueryFilter(u => u.RecordState == RecordState.Active);
             builder.Entity<Garbage>().HasQueryFilter(u => u.RecordState == RecordState.Active);
+            builder.Entity<Utility>().HasQueryFilter(u => u.RecordState == RecordState.Active);
         }
     }
 }
