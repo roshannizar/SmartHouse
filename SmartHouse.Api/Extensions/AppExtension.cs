@@ -32,6 +32,7 @@ namespace SmartHouse.Api.Extensions
             services.AddTransient<IGarbageService, GarbageService>();
             services.AddTransient<INotificationService, NotificationService>();
             services.AddTransient<IBackgroundService, BackgroundService>();
+            services.AddTransient<INotificationService, NotificationService>();
 
             services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
 
